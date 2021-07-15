@@ -1,0 +1,37 @@
+
+
+we initiate node package in a local git repository 
+to create package.json (
+which decuments project's dependensies 
+& to specify the version
+& makes sharing the code easier with developers by allwoing them to reinstalls the existed modules)
+
+npm init 
+........................
+
+installing node module (starting with the module called lite server)
+
+lite server makes it easier to show the outcome of web development work in browser
+
+	npm install lite-server --save-dev  
+
+	(--save-dev : it means that the project is directly dependent on the the module we insall)
+
+........................
+
+run the lite server we include the ommand in the package.json script
+
+	by adding "start":"npm run lite",
+
+	& adding "lite":"lite-server" 	 to the json file
+
+NOW by running the lite server the content of the folder will be served up in the browser
+
+.............................
+
+running in the command line the follwoing command will run the script configured in
+the package.json 
+
+npm start
+
+

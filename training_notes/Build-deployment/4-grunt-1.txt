@@ -1,0 +1,59 @@
+we will set up the conversion from scss to css / watch task / serve up the code using browser sync 
+using the grunt 
+.....................
+https://gruntjs.com/getting-started
+.............................................
+
+- installing Grunt (set it up as global)
+
+	npm install -g grunt-cli@1.2.0 
+	
+	(-g:This will put the grunt command in your system path, allowing it to be run from any directory.)
+	
+- then we installing grunt it locally 
+	npm install grunt@1.0.2 --save-dev
+	
+- we add new file 'gruntfile.js' and edit it by adding 
+
+	'use strict';
+	
+	module.exports = function(grunt){
+	// here we write the configurations 
+		
+		grunt.initConfig({
+			
+		});
+	}
+
++ setting up grunt plugins to compile scss code to css code 
+
+	npm isntall grunt-sass@2.1.0 --save-dev OR (npm isntall grunt-sass --save-dev )
+
++ installing 	time-grunt (prints time stats fro running tasks) 
+				jit-grunt  (for loading in those Grunt plug-ins whenever they are required within any application) OR we can load the grunt plugins explicitly.
+				
+	npm isntall time-grunt@1.4.0 --save-dev  
+	npm isntall jit-grunt@0.10.0 --save-dev
+	
+	
++ adding the required code to the 'gruntfile.js'
+
++ we can now execute 'grunt css ' in the prompt 
+
+
+- now we need to set up a watch and serve tasks for grunt :
+
++ we install watch plugin to keep a watch on various files :
+	npm install grunt-contrib-watch@1.0.0 --save-dev
+	
++ we install browser sync (to serve up the fiels from project folder to see the resutl in browser)
+	npm install grunt-browser-sync@2.2.0 --save-dev
+
++ then add the default task for grunt ( runs by typing grunt in the cmd ):
+	    grunt.registerTask('default', ['browserSync','watch']);
+		
+     // watch task will not allow any task after it so be carfule to put the watch task as a last command in the sequence
+	 
+	-- any changes to the scss files => the sass task will be invoked (means recompiling the scss file ) => then reloading files and syncing 
+
+

@@ -1,0 +1,29 @@
+
+we need to install npm modules to automate tasks 
+
+- OnChange : to watch files in thep roject folder , whenever those files change, then it automatically triggers a task to be executed
+
+(another module for the same purpose called [watch])
+	notice : every time we change scss file the onchange will be triggered to
+			 run the scss command in the npm scripts which compile scss files into css 
+
+
+- parallelshell : allows to execute multiple npm scripts , enables us also to keep watch on various files and do other tasks .
+
+
+	installing :
+		npm install --save-dev onchange parallelshell
+	editing scripts in package.json:
+		use the onchange module to watch all scss files .........
+		add 		: "watch:scss":"onchange 'css/*.scss' -- npm run scss"
+		for windows : "watch:scss":"onchange \"css/*.scss\" -- npm run scss"
+		using parallelshell ..........
+		add 		: "watch-all":"parallelshell 'npm run watch:scss' 'npm run lite'"
+		for windows : "watch-all":"parallelshell \"npm run watch:scss\" \"npm run lite\""
+		
+	then we can change the strat script to "npm run watch:all"
+
+note: use [npm install -- save-dev onchange@3.3.0 parallelshell@3.0.1] for the npm start to work 
+
+
+

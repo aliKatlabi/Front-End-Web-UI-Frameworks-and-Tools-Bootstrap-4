@@ -1,0 +1,29 @@
+the aim is to not repeat our selves .
+We need a build tool to auto run the repetitve tasks.
+
+commmon tasks for CSS :
+
+- compiling scss or less into CSS.
+- we may need to run autoprefixer(to add any vendor prefixer that is needed) for issues that might arrise in various browsers.
+- minification : removing unnecessary charechters (white spaces, newlines, comments) from source code without comprimising functionality [[it migth make it hard to read]].
+- Concatenation : group all css files into one css file only.
+
+common tasks for javascript:
+
+- JSHint : static code analyses (checking code for errors )
+- Concatenation: make a one big JS fie 
+- Uglification: minification + Mangling (reducing names of variables into single letter)
+- rechecking for errors
+
+Other tasks :
+
+- Otimizing files to reduce file size (like in images case ).
+- Watching : watching for changes in files and automatically rerunning tasks.
+- Server and liverload : we need the ability to serve up the code and render it atutmatically in the browser like in (lite-srever)
+- testing 
+- Building the site for deployment 
+
+
+
+
+

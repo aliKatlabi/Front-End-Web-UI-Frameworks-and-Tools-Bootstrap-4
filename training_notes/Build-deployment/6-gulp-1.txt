@@ -1,0 +1,88 @@
+.......Gulp is more code than config
+
+
+install Gulp command-line interface (CLI) globally
+
+	npm install -g gulp-cli@2.0.1
+
+Next install Gulp to use within your project
+
+	npm install gulp@3.9.1 --save-dev
+
+
+Install Gulp Plugins for SASS and Browser-Sync
+Install all the Gulp plugins that you will need for this exercise.
+
+	npm install gulp-sass@3.1.0  browser-sync@2.23.6 --save-dev
+	
+
+Creating a Gulp File....................
+
+Next you need to create a Gulp file containing the tasks to be run when you use Gulp. To do this, create a file named gulpfile.js in the conFusion folder.
+
+
+Loading Gulp Plugins
+Load in all the Gulp plugins by including the following code in the Gulp file
+
+
+'use strict';
+
+var gulp = require('gulp'),
+    sass = require('gulp-sass'),
+    browserSync = require('browser-sync');
+	
+	
+Adding Gulp Tasks for SASS and Browser-Sync.............
+
+installing the plugins :
+	npm install gulp-sass@3.1.0  browser-sync@2.23.6 --save-dev
+
+Next, we will add the code for 
+	the SASS task:
+	
+		gulp.task('sass', function () {
+			  return gulp.src('./css/*.scss')
+				.pipe(sass().on('error', sass.logError))
+				.pipe(gulp.dest('./css'));
+			});
+
+			gulp.task('sass:watch', function () {
+			  gulp.watch('./css/*.scss', ['sass']);
+			});
+
+Expliation of gulp.task:
+
+	gulp.src(''): takes all matched files and makes a stream of objects
+	using pipe(): these objects are piped through the function to be transformed 
+	gulp.dest() : puts the transformed files into the destination folder
+
+	the Browser-Sync task:
+	
+		gulp.task('browser-sync', function () {
+		   var files = [
+			  './*.html',
+			  './css/*.css',
+			  './img/*.{png,jpg,gif}',
+			  './js/*.js'
+		   ];
+
+		   browserSync.init(files, {
+			  server: {
+				 baseDir: "./"
+			  }
+		   });
+
+		});
+
+	the default task as follows:
+
+		gulp.task('default', ['browser-sync'], function() {
+			gulp.start('sass:watch');
+		});
+
+......................
+ gulp 
+
+
+
+

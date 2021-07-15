@@ -1,0 +1,70 @@
+
+one way of doing deployment is by combining all js files into one file and the same for css 
+
+we need to use a set of npm modules to achieve this .
+
+at the end, we need to build a folder "Dist" in the project(distribution folder) will contain all the files that can be simply copied into the web server 
+
+
+- we need first to clean the distribution folder :(we use rimraf)
+
+	npm install --save-dev rimraf@2.6.2
+then adding the script :
+	"clean":"rimraf dist"
+
+- The project might use font-awesome, these need to be copied (from node modules) to the "dist folder":(we use copyfiles)
+
+	npm -g install copyfiles@2.0.0		(-g: installing globally)
+	
+	then adding the script :
+	"copyfonts": "copyfiles -f node_modules/font-awesome/fonts/* dist/fonts",
+	
+	
+- Compressing and Minifying Images
+
+We use the imagemin-cli NPM module to help us to compress our images to reduce the size of the images being used in our project
+	installing :
+		npm -g install imagemin-cli@3.0.0
+		
+		
+...........Preparing the Distribution Folder ................
+
+we need to ignore the changes of the "Dist" folder when commiting to git so, 
+we add "dist" to the .gitignore
+
+...............................................
+
+we also use [[ usemin-cli ]] which uses other node moduels t transform the html files and concatenate the css files and be put into the dist folder (same for js files)
+
+we need to install  usemin-cli, cssmin, uglifyjs and htmlmin:
+	
+	npm install --save-dev usemin-cli@0.5.1 cssmin@0.4.3 uglifyjs@2.4.11 htmlmin@0.0.7
+	
+Add the following two scripts to the package.json file:
+
+	"usemin": "usemin contactus.html -d dist --htmlmin -o dist/contactus.html && usemin aboutus.html -d dist --htmlmin -o dist/aboutus.html && usemin index.html -d dist --htmlmin -o dist/index.html",
+    "build": "npm run clean && npm run imagemin && npm run copyfonts && npm run usemin"
+
+	-d dist : specify that the destination file is dist
+	--htmlmin: to minimize the html file by removing unecessary spaces and comments 
+	
+	
+* to make the usemin package work: we need to change the html file by grouping the css , js files (using comments )
+to make the usemin recognize them for later concatenating and uglifying .
+
+
+		- surrounding the css links by     
+				<!-- build:css css/main.css -->
+				....css files 
+				<!-- endbuild -->
+			this means : this block of css files it will be combined together and concatenated and minifyed and put in the file called main.css 
+		- surrounding the js links 
+				<!-- build:js js/main.js -->
+				....js files 
+				<!-- endbuild -->
+			this means : this block of css files it will be
+
+
+
+
+	

@@ -1,0 +1,33 @@
+<table class="table">
+
+</table>
+
+Bootstrap styling tables:
+
+table-{striped/hover/bordered/sm/responsive}
+
+apply backgrounds for insdiviuals rows or entire tables: using (bg-{success/danger...})
+
+<tr class="bg-sucess"></tr>
+<td class="bg-primary"></td>
+
+
+
+..................................................................
+
+to highlight content on webpage we can use cards
+
+
+<div class="card">
+
+	....card header....
+	<h3 class="card-header bg-primary text-white">Facts at Glance</h3>
+	
+	....card body....
+	<div class="card-body"></div>
+</div>
+
+OR it can be 
+
+<div class="card card-body"></div>
+

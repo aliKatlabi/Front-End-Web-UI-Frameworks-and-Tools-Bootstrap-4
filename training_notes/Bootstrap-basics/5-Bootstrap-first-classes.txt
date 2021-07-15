@@ -1,0 +1,69 @@
+
+in a div tag we can classify it as :
+
+class="container"
+We use the container class to keep content within a fixed width on the screen, determined by the size of the screen
+we can put many rows in container 
+
+class="row"
+
+each row span 12 colomns (default but can be changed) we control the spanning by class col-
+.....................................
+
+class="col-12 col-sm-6" |-> means for extra small screen the row spans 12 (whole screen)
+						|-> for small screen and above 	the row spans 6
+						
+.....................................
+we can do this :
+
+<div class="col-12 col-sm-3 col-md-6 col-lg-9"> </div>
+
+<div class="col col-sm col-md col-lg"> </div>
+
+			|-> means for extra small screen the row spans 12 (whole screen)
+			|-> for small screen row spans 3 and 6 for midum and 9 for larg
+			|-> the div tag after this will span [[what is left]] in each screen size
+
+.....................................
+
+class="col-auto"  : it will span enough coloumns as is required by the content 
+
+
+.....................................
+
+by adding to the class name the following it makes different effects:
+
+order-(size)-(first\last)  |-> it changes the order of the row based on the size 
+
+
+offset-(n)	|-> the content of the tag will be pushed right by the n columns
+
+
+align-self-*	|-> horizontal adjusting 
+align-items-*	|-> horizontal adjusting 
+
+
+justify-self-*	|-> vertical adjusting 
+justify-items-*	|-> vertical adjusting 
+
+
+display property:
+
+.d-{value} for xs
+.d-{breakpoint}-{value} for sm, md, lg, and xl.
+
+Where value is one of:
+
+none
+inline
+inline-block
+block
+table
+table-cell
+table-row
+flex
+inline-flex
+
+
+
+			

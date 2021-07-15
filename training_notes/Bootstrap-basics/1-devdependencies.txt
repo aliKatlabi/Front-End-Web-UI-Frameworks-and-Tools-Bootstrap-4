@@ -1,0 +1,14 @@
+
+in package.json there is information called devdependencies
+it will tell what modules are used in the project 
+		SO WE DONT NEED TO STORE THEM ONLINE (online repos)
+but we can reinstall them using the this "devdependencies" using the command 
+
+npm install
+
+................................................
+
+NOW we need to exclude the node modules from being saved on git repository
+
+BY creating .gitignore
+and type in the first line : node_modules

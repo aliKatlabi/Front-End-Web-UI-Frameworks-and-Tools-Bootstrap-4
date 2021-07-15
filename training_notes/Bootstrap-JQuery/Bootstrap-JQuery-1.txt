@@ -1,0 +1,25 @@
+JQuery Syntax
+
+$(selector).action()
+
+$ 			: define or access the jquery
+(selector)	: to query the selected html elements
+			  { -selecting using html elements/tags
+				-selecting using id
+				-selecting using classes
+				-selecting using attributes ,e.g.,([href], [data-toggle="tooltip"])
+				-selecting the current element: $(this)
+				and more...
+			  }
+.action()	: the action to be performed on the element(s)
+
+...................................................................
+
+JQuery Events : user interaction on a web page causing DOM events
+
+Mouse(click-double click-mouseenter-mousleave)/Keyboard(keypress-keydown-keyup)
+Form(submit-change-focus-blur)/Document,Window(load-resize-scroll-upload)
+
+JQuery Events's methods : ready(), click(),dblclick(),on()
+
+...................................................................

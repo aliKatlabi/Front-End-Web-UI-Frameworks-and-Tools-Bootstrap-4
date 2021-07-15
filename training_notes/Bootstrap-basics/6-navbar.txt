@@ -1,0 +1,27 @@
+
+when designing a navigation bar we need <nav> or <div role="navigation">
+
+in the <nav> we specify the class as navbar (which allows to creat the bar) +
+
+navbar-expand-{sm-md-lg} 	: to tell at which breakpoint it is going to collapse 
+navbar-{dark-light}			: choose light or dark color 
+bg-(color)					: add a background color
+
+Sticky top/Fixed bottom/Fixed top : position of the navbar
+
+
+.....................................
+
+the content (children) of the <nav> are also supported
+
+.navbar-brand		: to add the brand of the product or the company
+	
+.navbar-nav			: define the main navigation in <ul> tag for example 
+
+.nav-item 			: can be put for the items of the navbar-nav (for <li> tags)
+.nav-link 			: can be put for the links belong to nav-items (for <a> tags in <li>)
+
+.active : hielight the link to indicate the active page
+
+
+
